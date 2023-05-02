@@ -1,0 +1,5 @@
+INSERT INTO `topicos`(`tipo`) VALUES ('PREVENÇÕES');
+INSERT INTO `topicos`(`tipo`) VALUES ('SALVAMENTOS DE AFOGADOS NÃO FATAIS');
+INSERT INTO `topicos`(`tipo`) VALUES ('CRIANÇAS ENCONTRADAS');
+INSERT INTO `topicos`(`tipo`) VALUES ('S.O.S PRAIA & S.O.S VIA PUBLICA');
+INSERT INTO `topicos`(`tipo`) VALUES ('ÓBITOS');
