@@ -55,13 +55,13 @@
           <td>{{$ocorrencia->hora}}</td>
           <td>{{$ocorrencia->topicos->tipo}}</td>
 
-          <td> <a href="/os/edit/{{$ocorrencia->id}}"><button type="button" class="btn btn-warning text-light">EDITAR</button></a> <button class="delete-btn btn-danger" data-id="{{ $ocorrencia->id }}">Excluir</button>
+          <td> <a href="{{route('os.edit',$ocorrencia->id)}}"><button type="button" class="btn btn-warning text-light">EDITAR</button></a> <button class="delete-btn btn-danger" data-id="{{ $ocorrencia->id }}">Excluir</button>
           </a></td>
         </tr>
-        @endforeach
       </tbody>
     </table>
   </div>
+   
   <div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-labelledby="confirm-delete-modal-label">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -76,7 +76,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <form id="delete-form" method="POST">
+          <form id="delete-form" action="{{route('os.delete',$ocorrencia->id)}}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Excluir</button>
@@ -85,13 +85,14 @@
       </div>
     </div>
   </div>
+  @endforeach
   
   <script>
     $(document).ready(function() {
       $('.delete-btn').on('click', function() {
         var id = $(this).data('id');
         $('#confirm-delete-modal').modal('show');
-        $('#delete-form').attr('action', '/os/delete/' + id);
+        
       });
     });
   </script>

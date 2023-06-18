@@ -43,7 +43,7 @@
                   
                       
                                 <li class="nav-item active">
-                                  <a class="nav-link" href="/os">Registro de Ocorrência <span class="sr-only">(current)</span></a>
+                                  <a class="nav-link" href="{{route('os.index')}}">Registro de Ocorrência <span class="sr-only">(current)</span></a>
                                 </li>
                                 
                             </div>

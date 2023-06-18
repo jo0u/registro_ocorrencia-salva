@@ -26,13 +26,13 @@ Auth::routes();
 Route::get('/home',[OsController::class, 'index'])->middleware('auth');
 
 Route::get('/os/cadastro',[OsController::class, 'create'])->name('os.cadastro')->middleware('auth');
-Route::post('/os',[OsController::class, 'store'])->middleware('auth');
+Route::post('/os',[OsController::class, 'store'])->name('os.store')->middleware('auth');
 Route::get('/os',[OsController::class, 'index'])->middleware('auth')->name('os.index');
 Route::get('/os/consultar',[OsController::class, 'consultar'])->middleware('auth')->name('os.consultar');
 Route::get('/os/edit/{id}',[OsController::class, 'edit'])->middleware('auth')->name('os.edit');
-Route::delete('/os/delete/{id}',[OsController::class, 'destroy'])->middleware('auth');
+Route::delete('/os/delete/{id}',[OsController::class, 'destroy'])->name('os.delete')->middleware('auth');
 Route::post('/search', 'OcorrenciasController@search')->name('search');
-Route::put('/os/{id}',[OsController::class, 'update'])->middleware('auth');
+Route::put('/os/{id}',[OsController::class, 'update'])->name('os.update')->middleware('auth');
 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

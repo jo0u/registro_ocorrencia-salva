@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<form action="/os/{{$ocorrencia->id}}" method="POST">
+<form action="{{route('os.update',$ocorrencia->id)}}" method="POST">
     @csrf
     @method('PUT')
 <div class="container">
@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col-md-6">
             <label for="data">Data:</label>
-            <input type="date" id="data" name="data" class="form-control" required>
+            <input type="date" id="data" name="data" class="form-control" value="{{$ocorrencia->data}}" required>
             <span id="data-error" class="text-danger"></span>
         <div class="col-md-6">
           <label for="hora">Hora:</label>
@@ -109,7 +109,7 @@
       </div>
       <div class="col-md-12">
         <button type="submit" class="btn btn-primary">Enviar</button>
-        <a href="/os">Voltar</a>
+        <a href="{{route('os.consultar')}}">Voltar</a>
   
        
       </div>

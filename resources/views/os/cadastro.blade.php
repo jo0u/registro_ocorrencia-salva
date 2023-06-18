@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<form action="/os" method="POST">
+<form action="{{route('os.store')}}" method="POST">
     @csrf
 <div class="container">
     <form>
@@ -120,7 +120,7 @@
       <button type="submit" class="btn btn-primary">Enviar</button>
 
 
-      <a href="/os">Voltar</a>
+      <a href="{{route('os.index')}}">Voltar</a>
     </div>
 
   </div>

@@ -91,8 +91,8 @@
   </div>
 
   <hr>
-  <a href="/os/cadastro" class="btn btn-primary">Nova Ocorrência</a>
-  <a href="/os/consultar" class="btn btn-primary">Ver Dados</a>
+  <a href="{{route('os.cadastro')}}" class="btn btn-primary">Nova Ocorrência</a>
+  <a href="{{route('os.consultar')}}" class="btn btn-primary">Ver Dados</a>
     <script>
       $(document).ready(function () {
           $('#form-os').submit(function (event) {
